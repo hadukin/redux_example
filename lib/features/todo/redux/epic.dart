@@ -1,9 +1,9 @@
+import 'package:rxdart/transformers.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:redux_example/di/di.dart';
 import 'package:redux_example/features/todo/domain/use_cases/todo_use_cases.dart';
-import 'package:redux_example/redux/app_state.dart';
 import 'package:redux_example/features/todo/redux/action.dart';
-import 'package:rxdart/transformers.dart';
+import 'package:redux_example/redux/app_store.dart';
 
 final todoEpics = combineEpics<AppState>([
   TypedEpic<AppState, TodoCreateRequestAction>(_TodoCreateEpics(getIt.get())),

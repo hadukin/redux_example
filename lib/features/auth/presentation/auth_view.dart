@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_example/features/auth/redux/action.dart';
 import 'package:redux_example/features/auth/redux/state.dart';
-import 'package:redux_example/redux/app_state.dart';
+import 'package:redux_example/redux/app_store.dart';
 
 class AuthView extends StatefulWidget {
   const AuthView({super.key});

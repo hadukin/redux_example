@@ -7,7 +7,7 @@ import 'package:redux_example/features/auth/redux/action.dart';
 import 'package:redux_example/main.dart';
 import 'package:redux_example/features/auth/presentation/auth_view.dart';
 import 'package:redux_example/features/todo/presentation/todo_view.dart';
-import 'package:redux_example/redux/app_state.dart';
+import 'package:redux_example/redux/app_store.dart';
 import 'package:rxdart/transformers.dart';
 
 final authEpics = combineEpics<AppState>([
