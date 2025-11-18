@@ -17,6 +17,9 @@ class _TodoCreateEpics implements EpicClass<AppState> {
   @override
   Stream<TodoAction> call(Stream actions, EpicStore<AppState> store) {
     return actions.whereType<TodoCreateRequestAction>().asyncExpand((event) async* {
+      if (event.title.isEmpty) {
+        yield const TodoCreateFailureAction('The filed not must be empty');
+      }
       try {
         final todo = await cases.create(event.title);
 
