@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TodoState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<TodoEntity> get todos => throw _privateConstructorUsedError;
-  UniqueKey? get deleteId => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
 
   /// Create a copy of TodoState
@@ -33,11 +32,7 @@ abstract class $TodoStateCopyWith<$Res> {
   factory $TodoStateCopyWith(TodoState value, $Res Function(TodoState) then) =
       _$TodoStateCopyWithImpl<$Res, TodoState>;
   @useResult
-  $Res call(
-      {bool isLoading,
-      List<TodoEntity> todos,
-      UniqueKey? deleteId,
-      String? error});
+  $Res call({bool isLoading, List<TodoEntity> todos, String? error});
 }
 
 /// @nodoc
@@ -57,7 +52,6 @@ class _$TodoStateCopyWithImpl<$Res, $Val extends TodoState>
   $Res call({
     Object? isLoading = null,
     Object? todos = null,
-    Object? deleteId = freezed,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
@@ -69,10 +63,6 @@ class _$TodoStateCopyWithImpl<$Res, $Val extends TodoState>
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<TodoEntity>,
-      deleteId: freezed == deleteId
-          ? _value.deleteId
-          : deleteId // ignore: cast_nullable_to_non_nullable
-              as UniqueKey?,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -89,11 +79,7 @@ abstract class _$$TodoStateImplCopyWith<$Res>
       __$$TodoStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {bool isLoading,
-      List<TodoEntity> todos,
-      UniqueKey? deleteId,
-      String? error});
+  $Res call({bool isLoading, List<TodoEntity> todos, String? error});
 }
 
 /// @nodoc
@@ -111,7 +97,6 @@ class __$$TodoStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? todos = null,
-    Object? deleteId = freezed,
     Object? error = freezed,
   }) {
     return _then(_$TodoStateImpl(
@@ -123,10 +108,6 @@ class __$$TodoStateImplCopyWithImpl<$Res>
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<TodoEntity>,
-      deleteId: freezed == deleteId
-          ? _value.deleteId
-          : deleteId // ignore: cast_nullable_to_non_nullable
-              as UniqueKey?,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -141,7 +122,6 @@ class _$TodoStateImpl implements _TodoState {
   const _$TodoStateImpl(
       {this.isLoading = false,
       final List<TodoEntity> todos = const [],
-      this.deleteId,
       this.error})
       : _todos = todos;
 
@@ -158,13 +138,11 @@ class _$TodoStateImpl implements _TodoState {
   }
 
   @override
-  final UniqueKey? deleteId;
-  @override
   final String? error;
 
   @override
   String toString() {
-    return 'TodoState(isLoading: $isLoading, todos: $todos, deleteId: $deleteId, error: $error)';
+    return 'TodoState(isLoading: $isLoading, todos: $todos, error: $error)';
   }
 
   @override
@@ -175,14 +153,12 @@ class _$TodoStateImpl implements _TodoState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._todos, _todos) &&
-            (identical(other.deleteId, deleteId) ||
-                other.deleteId == deleteId) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading,
-      const DeepCollectionEquality().hash(_todos), deleteId, error);
+      const DeepCollectionEquality().hash(_todos), error);
 
   /// Create a copy of TodoState
   /// with the given fields replaced by the non-null parameter values.
@@ -197,15 +173,12 @@ abstract class _TodoState implements TodoState {
   const factory _TodoState(
       {final bool isLoading,
       final List<TodoEntity> todos,
-      final UniqueKey? deleteId,
       final String? error}) = _$TodoStateImpl;
 
   @override
   bool get isLoading;
   @override
   List<TodoEntity> get todos;
-  @override
-  UniqueKey? get deleteId;
   @override
   String? get error;
 

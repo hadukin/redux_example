@@ -30,12 +30,11 @@ TodoState _createFailure(TodoState state, TodoCreateFailureAction action) {
 }
 
 TodoState _deleteRequest(TodoState state, TodoDeleteRequestAction action) {
-  return state.copyWith(deleteId: action.id);
+  return state.copyWith();
 }
 
 TodoState _deleteSuccess(TodoState state, TodoDeleteSuccessAction action) {
   return state.copyWith(
-    deleteId: null,
     todos: state.todos.where((item) => item.id != action.id).toList(),
   );
 }
