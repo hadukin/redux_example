@@ -202,7 +202,7 @@ class _TodoViewState extends State<TodoView> {
     return StoreConnector<AppState, AuthState>(
       onDidChange: (previousViewModel, viewModel) {
         if (viewModel is UnauthorizedState) {
-          context.go('/');
+          context.go('/auth');
         }
       },
       converter: (store) => store.state.auth,

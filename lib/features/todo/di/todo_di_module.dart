@@ -4,14 +4,15 @@ import 'package:redux_example/features/todo/data/data_source/todo_remote_data_so
 import 'package:redux_example/features/todo/data/data_source/todo_remote_data_source_impl.dart';
 import 'package:redux_example/features/todo/data/repository/todo_repository_impl.dart';
 import 'package:redux_example/features/todo/domain/repository/todo_repository.dart';
-import 'package:redux_example/features/todo/domain/use_cases/todo_use_cases.dart';
-import 'package:redux_example/features/todo/domain/use_cases/todo_use_cases_impl.dart';
+import 'package:redux_example/features/todo/domain/use_cases/todo_create_use_case.dart';
+import 'package:redux_example/features/todo/domain/use_cases/todo_delete_use_case.dart';
 
 final class TodoDiModule implements DiModule {
   @override
   Future<void> register(GetIt instance) async {
     instance.registerSingleton<TodoRemoteDateSource>(TodoRemoteDateSourceImpl());
     instance.registerSingleton<TodoRepository>(TodoRepositoryImpl(instance.get()));
-    instance.registerSingleton<TodoUseCases>(TodoUseCasesImpl(instance.get()));
+    instance.registerSingleton(TodoCreateUseCase(instance.get()));
+    instance.registerSingleton(TodoDeleteUseCase(instance.get()));
   }
 }

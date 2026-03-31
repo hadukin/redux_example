@@ -1,14 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class UserEntity extends Equatable {
-  final String name;
-  final String email;
+part 'user_entity.freezed.dart';
 
-  const UserEntity({
-    required this.name,
-    required this.email,
-  });
-
-  @override
-  List<Object?> get props => [name, email];
+@freezed
+class UserEntity with _$UserEntity {
+  factory UserEntity({
+    required String name,
+    required String email,
+  }) = _UserEntity;
 }

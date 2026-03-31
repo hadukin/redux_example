@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:redux_example/features/auth/redux/epic.dart';
@@ -20,3 +22,9 @@ final Store<AppState> store = Store<AppState>(
   middleware: [EpicMiddleware(_createAppEpic())],
   distinct: true,
 );
+
+extension BuildContextExtension on BuildContext {
+  dynamic action<AppState>(dynamic action) {
+    StoreProvider.of<AppState>(this).dispatch(action);
+  }
+}

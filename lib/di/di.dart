@@ -13,8 +13,6 @@ extension GetItExtension on GetIt {
 }
 
 Future registerDependencies() async {
-  // Регистрируем модули фич
   await getIt.registerModule(AuthDiModule());
   await getIt.registerModule(TodoDiModule());
-  // ... другие модули
 }

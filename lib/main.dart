@@ -5,7 +5,6 @@ import 'package:redux_example/redux/app_store.dart';
 import 'package:redux_example/router/router.dart';
 
 Future<void> main() async {
-  // Инициализируем DI
   await registerDependencies();
 
   runApp(
