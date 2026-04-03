@@ -9,13 +9,6 @@ final theme = ThemeData(
   useMaterial3: true,
   colorScheme: colorScheme,
   scaffoldBackgroundColor: const Color(0xFFF4F6FB),
-  cardTheme: CardTheme(
-    elevation: 8,
-    margin: EdgeInsets.zero,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(28),
-    ),
-  ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
     fillColor: colorScheme.surface,
